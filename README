@@ -1,3 +1,6 @@
 Esta es una primera app base para la adimistración de usuarios, roles, recursos, permisos y menús.
 
 Requiere KumbiaPHP v 1.0 beta 2
+
+Usuario: admin
+Clave: 123456
