@@ -1,0 +1,30 @@
+<p>
+    <?php View::content() ?>
+</p>
+<br />
+<?php echo Form::open()?>
+<?php echo Form::hidden('usuario.id', null, $id)?>
+<?php //echo Form::hidden('usuario.version', null, $usuario->version+1)?>
+<table>            
+    <tr class="prop">
+        <td valign="top" class="name">
+            <label for="usuario_clave">Clave:</label>
+        </td>
+        <td valign="top" class="value">
+            <?php echo Form::pass('usuario.clave') ?>
+        </td>
+    </tr>
+    <tr class="prop">
+        <td valign="top" class="name">
+            <label for="usuario_clave">Repita la clave:</label>
+        </td>
+        <td valign="top" class="value">
+            <?php echo Form::pass('usuario.clave2') ?>
+        </td>
+    </tr>
+</table>
+<?php
+echo Form::submit('Guardar','onclick="return confirm(\'¿Está seguro?\');"');
+echo Form::reset('Limpiar');
+echo Form::close();
+?>

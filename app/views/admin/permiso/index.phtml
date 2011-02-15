@@ -1,0 +1,44 @@
+<?php Tag::css('scaffold') ?>
+<?php echo Tag::css('jquery/treeview/jquery.treeview') ?>
+<div id="scaffold">
+    <h1>Permiso: <span>listar</span></h1>
+
+    <div id="treecontrol">
+        <a title="Cierra El Arbol" href="#">Cerrar Todos</a> |
+        <a title="Cierra El Arbol" href="#">Expandir Todos</a> |
+        <a title="Cierra y Abre los elementos del Arbol" href="#">Toggle All</a>
+    </div>
+
+    <ul id="navigation">
+        <?php foreach ($roles as $rol): ?>
+            <li><h2><?php echo $rol->nombre ?></h2>
+                <ul>
+                <?php foreach (Load::model('permiso')->getMenuX($rol->id) as $item): ?>
+                    <li><?php echo Html::link('#', $item->getMenu()->nombre, "title='Controlador'") ?>
+                        <ul>
+                        <?php foreach (Load::model('permiso')->getSubMenu($rol->id, $item->getMenu()->id) as $menu): ?>
+                            <li><strong><?php echo $menu->getRecurso()->nombre ?></strong>  : <?php echo $menu->url ?>
+                            <?php echo Html::link("admin/permiso/borrar/$menu->id/", 'Borrar') ?> |
+                            <?php echo Html::link("admin/permiso/editar/$menu->id/", 'Editar') ?>
+                        </li>
+                        <?php endforeach; ?>
+                        </ul>
+                    </li>
+                <?php endforeach; ?>
+                        </ul>
+                    </li>
+        <?php endforeach; ?>
+                        </ul>
+                        <div class="actions">
+        <?php echo Html::linkAction("crear/", 'Crear registro') ?>
+                        </div>
+
+    <?php echo Tag::js('jquery/jquery.treeview') ?>
+    <script type='text/javascript'>
+        $("#navigation").treeview({
+            collapsed: true,
+            animated: 'fast',
+            control: "#treecontrol"
+        });
+    </script>
+</div>

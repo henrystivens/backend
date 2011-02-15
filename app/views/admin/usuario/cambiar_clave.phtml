@@ -1,0 +1,17 @@
+<?php Tag::css('scaffold') ?>
+<div id="scaffold">
+    <?php View::content(); ?>
+    <h1>Usuario: <span>cambiar clave</span></h1>
+    <?php echo Form::open(null, 'post', 'class="scaffold"') ?>
+    <?php //echo Form::hidden('usuario.id', null, $id)?>
+    <label for="usuario_nick" class="required">Clave <em>*</em></label>
+    <?php echo Form::pass('usuario.clave') ?>
+    <label for="usuario_email" class="required">Repita la clave: <em>*</em></label>
+    <?php echo Form::pass('usuario.clave2') ?>
+
+    <?php echo Form::submit('Cambiar', 'onclick="return confirm(\'¿Está seguro?\');"'); ?>
+    <?php echo Form::close() ?>
+    <div class="actions">
+        <a href="../">Listado</a>
+    </div>
+</div>

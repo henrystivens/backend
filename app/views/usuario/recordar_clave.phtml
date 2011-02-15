@@ -1,0 +1,25 @@
+<p>
+    <?php View::content() ?>
+</p>
+<br />
+<?php echo Form::open()?>
+<p>
+    ¿Olvidaste tu contraseña? Escribe tu dirección de correo electrónico
+    o nombre de usuario. Te enviaremos un mensaje al correo electrónico
+    con un vínculo para cambiar la contraseña.
+</p>
+<table>            
+    <tr class="prop">
+        <td valign="top" class="name">
+            <label for="email">Correo electrónico o Nombre de usuario:</label>
+        </td>
+        <td valign="top" class="value">
+            <?php echo Form::text('email_or_username') ?>
+        </td>
+    </tr>    
+</table>
+<?php
+echo Form::submit('Enviar','onclick="return confirm(\'¿Está seguro?\');"');
+echo Form::reset('Limpiar');
+echo Form::close();
+?>

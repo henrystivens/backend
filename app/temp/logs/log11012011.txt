@@ -1,0 +1,43 @@
+[Tue, 11 Jan 11 08:13:19 -0500][DEBUG] DESCRIBE `usuario`
+[Tue, 11 Jan 11 08:13:19 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario
+[Tue, 11 Jan 11 08:13:19 -0500][DEBUG] SELECT COUNT(*) FROM usuario 
+[Tue, 11 Jan 11 08:13:19 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario ORDER BY id desc LIMIT 10 OFFSET 0
+[Tue, 11 Jan 11 08:13:26 -0500][DEBUG] DESCRIBE `usuario`
+[Tue, 11 Jan 11 08:13:26 -0500][DEBUG] SELECT COUNT(*) FROM usuario  WHERE nick = 'admin' AND clave = 'dd5fef9c1c1da1394d6d34b248c51be2ad740840' AND estado = '1'
+[Tue, 11 Jan 11 08:13:26 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario WHERE nick = 'admin' AND clave = 'dd5fef9c1c1da1394d6d34b248c51be2ad740840' AND estado = '1' LIMIT 1
+[Tue, 11 Jan 11 08:13:26 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario
+[Tue, 11 Jan 11 08:13:26 -0500][DEBUG] SELECT COUNT(*) FROM usuario 
+[Tue, 11 Jan 11 08:13:26 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario ORDER BY id desc LIMIT 10 OFFSET 0
+[Tue, 11 Jan 11 08:13:29 -0500][DEBUG] DESCRIBE `usuario`
+[Tue, 11 Jan 11 08:13:29 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario
+[Tue, 11 Jan 11 08:13:42 -0500][DEBUG] DESCRIBE `usuario`
+[Tue, 11 Jan 11 08:13:42 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario
+[Tue, 11 Jan 11 08:13:42 -0500][DEBUG] SELECT COUNT(*) FROM usuario 
+[Tue, 11 Jan 11 08:13:42 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario ORDER BY id desc LIMIT 10 OFFSET 0
+[Tue, 11 Jan 11 08:13:48 -0500][DEBUG] DESCRIBE `usuario`
+[Tue, 11 Jan 11 08:13:48 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario
+[Tue, 11 Jan 11 08:13:52 -0500][DEBUG] DESCRIBE `usuario`
+[Tue, 11 Jan 11 08:13:52 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario
+[Tue, 11 Jan 11 08:14:00 -0500][DEBUG] DESCRIBE `usuario`
+[Tue, 11 Jan 11 08:14:00 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario
+[Tue, 11 Jan 11 08:14:03 -0500][DEBUG] DESCRIBE `usuario`
+[Tue, 11 Jan 11 08:14:03 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario
+[Tue, 11 Jan 11 08:14:07 -0500][DEBUG] DESCRIBE `usuario`
+[Tue, 11 Jan 11 08:14:07 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario
+[Tue, 11 Jan 11 08:14:07 -0500][DEBUG] DESCRIBE `usuario`
+[Tue, 11 Jan 11 08:14:07 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario
+[Tue, 11 Jan 11 08:14:11 -0500][DEBUG] DESCRIBE `usuario`
+[Tue, 11 Jan 11 08:14:11 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario
+[Tue, 11 Jan 11 08:14:11 -0500][DEBUG] SELECT COUNT(*) FROM usuario 
+[Tue, 11 Jan 11 08:14:11 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario ORDER BY id desc LIMIT 10 OFFSET 0
+[Tue, 11 Jan 11 08:14:13 -0500][DEBUG] DESCRIBE `usuario`
+[Tue, 11 Jan 11 08:14:13 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario
+[Tue, 11 Jan 11 08:14:20 -0500][DEBUG] DESCRIBE `usuario`
+[Tue, 11 Jan 11 08:14:20 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario
+[Tue, 11 Jan 11 08:14:20 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario WHERE id = '1' LIMIT 1
+[Tue, 11 Jan 11 08:14:20 -0500][DEBUG] SELECT COUNT(*) FROM usuario WHERE  id = '1'
+[Tue, 11 Jan 11 08:14:20 -0500][DEBUG] SELECT COUNT(*) FROM usuario WHERE  id = '1'
+[Tue, 11 Jan 11 08:14:20 -0500][DEBUG] UPDATE usuario SET nick = 'admin',email = 'maxter2024@gmail.com',clave = '7c4a8d09ca3762af61e59520943dc26494f8941b',estado = '1',nombre = 'Henry Stivens Adarme',avatar = NULL,rol_id = '1',registrado_at = '2011-01-06 21:28:36',actualizado_in = '2011-01-11 8:14:20',reset = 'kuS7wWaCqQ79krQEXILeTdxqaFoxNUW8' WHERE  id = '1'
+[Tue, 11 Jan 11 08:14:20 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario
+[Tue, 11 Jan 11 08:14:20 -0500][DEBUG] SELECT COUNT(*) FROM usuario 
+[Tue, 11 Jan 11 08:14:20 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario ORDER BY id desc LIMIT 10 OFFSET 0

@@ -1,0 +1,2 @@
+[Wed, 12 Jan 11 10:25:30 -0500][DEBUG] DESCRIBE `usuario`
+[Wed, 12 Jan 11 10:25:30 -0500][DEBUG] SELECT id,nick,email,clave,estado,nombre,avatar,rol_id,registrado_at,actualizado_in,reset FROM usuario

@@ -1,0 +1,25 @@
+[Thu, 06 Jan 11 08:28:21 -0500][DEBUG] DESCRIBE `rol_usuario`
+[Thu, 06 Jan 11 08:28:26 -0500][DEBUG] DESCRIBE `rol_usuario`
+[Thu, 06 Jan 11 08:28:26 -0500][DEBUG] SELECT id,rol_id,usuario_id FROM rol_usuario WHERE usuario_id=2 LIMIT 1
+[Thu, 06 Jan 11 08:28:26 -0500][DEBUG] SELECT COUNT(*) FROM rol_usuario WHERE  id = '1'
+[Thu, 06 Jan 11 08:28:26 -0500][DEBUG] SELECT COUNT(*) FROM rol_usuario WHERE  id = '1'
+[Thu, 06 Jan 11 08:28:26 -0500][DEBUG] UPDATE rol_usuario SET rol_id = '1',usuario_id = '2' WHERE  id = '1'
+[Thu, 06 Jan 11 08:30:41 -0500][DEBUG] DESCRIBE `rol_usuario`
+[Thu, 06 Jan 11 08:30:41 -0500][DEBUG] SELECT id,rol_id,usuario_id FROM rol_usuario WHERE usuario_id=2 LIMIT 1
+[Thu, 06 Jan 11 08:30:41 -0500][DEBUG] SELECT COUNT(*) FROM rol_usuario WHERE  id = '1'
+[Thu, 06 Jan 11 08:30:41 -0500][DEBUG] SELECT COUNT(*) FROM rol_usuario WHERE  id = '1'
+[Thu, 06 Jan 11 08:30:41 -0500][DEBUG] UPDATE rol_usuario SET rol_id = '1',usuario_id = '2' WHERE  id = '1'
+[Thu, 06 Jan 11 08:30:41 -0500][DEBUG] INSERT INTO rol_usuario (rol_id,usuario_id) VALUES (1,2)
+[Thu, 06 Jan 11 08:30:41 -0500][DEBUG] SELECT id,rol_id,usuario_id FROM rol_usuario WHERE id = '3' LIMIT 1
+[Thu, 06 Jan 11 08:30:41 -0500][DEBUG] DESCRIBE `rol_usuario`
+[Thu, 06 Jan 11 08:30:41 -0500][DEBUG] SELECT COUNT(*) FROM rol_usuario 
+[Thu, 06 Jan 11 08:30:41 -0500][DEBUG] SELECT id,rol_id,usuario_id FROM rol_usuario ORDER BY id desc LIMIT 10 OFFSET 0
+[Thu, 06 Jan 11 08:32:05 -0500][DEBUG] DESCRIBE `rol_usuario`
+[Thu, 06 Jan 11 08:32:09 -0500][DEBUG] DESCRIBE `rol_usuario`
+[Thu, 06 Jan 11 08:32:09 -0500][DEBUG] SELECT id,rol_id,usuario_id FROM rol_usuario WHERE usuario_id=2 LIMIT 1
+[Thu, 06 Jan 11 08:32:09 -0500][DEBUG] SELECT COUNT(*) FROM rol_usuario WHERE  id = '1'
+[Thu, 06 Jan 11 08:32:09 -0500][DEBUG] SELECT COUNT(*) FROM rol_usuario WHERE  id = '1'
+[Thu, 06 Jan 11 08:32:09 -0500][DEBUG] UPDATE rol_usuario SET rol_id = '1',usuario_id = '2' WHERE  id = '1'
+[Thu, 06 Jan 11 08:32:16 -0500][DEBUG] DESCRIBE `rol_usuario`
+[Thu, 06 Jan 11 08:32:16 -0500][DEBUG] SELECT COUNT(*) FROM rol_usuario 
+[Thu, 06 Jan 11 08:32:16 -0500][DEBUG] SELECT id,rol_id,usuario_id FROM rol_usuario ORDER BY id desc LIMIT 10 OFFSET 0

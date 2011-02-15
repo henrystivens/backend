@@ -1,0 +1,24 @@
+<?php Tag::css('scaffold') ?>
+<div id="scaffold">
+    <?php View::content(); ?>
+    <h1>Usuario: <span>crear</span></h1>
+    <?php echo Form::open(null, 'post', 'class="scaffold"') ?>
+
+    <label for="usuario_nick" class="required">Nick <em>*</em></label>
+    <?php echo Form::text('usuario.nick') ?>
+    <label for="usuario_email" class="required">Email <em>*</em></label>
+    <?php echo Form::text('usuario.email') ?>
+    <label for="usuario_clave" class="required">Clave <em>*</em></label>
+    <?php echo Form::pass('usuario.clave') ?>
+    <label for="usuario_nombre" class="required">Nombre <em>*</em></label>
+    <?php echo Form::text('usuario.nombre') ?>
+    <label for="usuario_bio">Bio</label>
+    <?php echo Form::textarea('usuario.bio') ?>
+    <label for="usuario_rol_id" class="required">Rol <em>*</em></label>
+    <?php echo Form::dbSelect('usuario.rol_id', 'nombre', array('seguridad/rol', 'find'), '- Seleccione -') ?>
+    <input type="submit" value="Enviar" />
+    <?php echo Form::close() ?>
+    <div class="actions">
+        <a href="../">Listado</a>
+    </div>
+</div>

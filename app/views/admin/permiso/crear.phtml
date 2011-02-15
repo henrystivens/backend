@@ -1,0 +1,21 @@
+<?php Tag::css('scaffold') ?>
+<div id="scaffold">
+    <?php View::content(); ?>
+    <h1>Permiso: <span>crear</span></h1>
+    <?php echo Form::open(null, 'post', 'class="scaffold"') ?>    
+    <label for="permiso_rol_id" class="required">Rol <em>*</em></label>
+    <?php echo Form::dbSelect('permiso.rol_id', 'nombre', array('rol', 'find'), '- Seleccione -') ?>
+    <label for="permiso_recurso_id" class="required">Recurso <em>*</em></label>
+    <?php echo Form::dbSelect('permiso.recurso_id', 'nombre', array('recurso', 'find'), '- Seleccione -') ?>
+    <label for="permiso_menu_id" class="required">Menu <em>*</em></label>
+    <?php echo Form::dbSelect('permiso.menu_id', 'nombre', array('menu', 'find'), '- Seleccione -') ?>
+    <label for='permiso_visible'>Visible <em>*</em></label>
+    <?php echo Form::select('permiso.visible', array('1' => 'Visible', '0' => 'No visible')) ?>
+    <label for='permiso_estado'>Estado <em>*</em></label>
+    <?php echo Form::select('permiso.estado', array('A' => 'Activo', 'D' => 'Desactivado')) ?>
+    <input type="submit" value="Enviar" />
+    <?php echo Form::close() ?>
+    <div class="actions">
+        <a href="../">Listado</a>
+    </div>
+</div>

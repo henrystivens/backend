@@ -1,0 +1,40 @@
+<?php Tag::css('scaffold') ?>
+<div id="scaffold">
+    <?php View::content(); ?>
+    <h1>Usuario: <span>index</span></h1>
+    <?php if ($results->items) : ?>
+        <table>
+            <thead><tr>
+                    <th>Gravatar</th>
+                    <th>Nick</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr></thead>
+            <tbody>
+            <?php foreach ($results->items as $item) : ?>
+                <tr>
+                    <td><?php echo Html::gravatar($item->email) ?></td>
+                    <td><?php echo $item->nick ?></td>
+                    <td><?php echo $item->nombre ?></td>
+                    <td><?php echo $item->email ?></td>
+                    <td><?php echo $item->estado ?></td>
+                    <td><?php echo Html::linkAction("ver/$item->id/", 'Ver') ?> |
+                    <?php echo Html::linkAction("editar/$item->id/", 'Editar') ?> |
+                    <?php echo Html::linkAction("borrar/$item->id/", 'Borrar') ?> |
+                    <?php echo Html::linkAction("cambiar_clave/$item->id/", 'Cambiar clave') ?>
+                </td>
+            </tr>
+            <?php endforeach ?>
+                </tbody>
+            </table>
+    <?php View::partial('paginators/digg', false, array('page' => $results, 'url' => Router::get('controller_path') . '/index')); ?>
+
+    <?php else : // Si no hay items?>
+                        <h2>No hay ningún registro</h2>
+    <?php endif ?>
+    <div class="actions">
+        <?php echo Html::linkAction("crear/", 'Crear registro') ?>
+    </div>
+</div>

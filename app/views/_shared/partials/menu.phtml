@@ -1,0 +1,39 @@
+<script type="text/javascript">
+    var headID = document.getElementsByTagName("head")[0];
+    var cssNode = document.createElement('link');
+    cssNode.type = 'text/css';
+    cssNode.rel = 'stylesheet';
+    cssNode.href = '<?php echo PUBLIC_PATH ?>css/menu/dropdown.css';
+    cssNode.media = 'all';
+    headID.appendChild(cssNode);
+
+    var cssNode = document.createElement('link');
+    cssNode.type = 'text/css';
+    cssNode.rel = 'stylesheet';
+    cssNode.href = "<?php echo PUBLIC_PATH ?>css/menu/default.advanced.css";
+    cssNode.media = 'all';
+    headID.appendChild(cssNode);
+</script>
+<?php $permiso = Load::model('seguridad/permiso') ?>
+<?php Load::model('seguridad/menu') ?>
+<?php Load::model('seguridad/recurso') ?>
+<ul class="dropdown dropdown-horizontal">
+    <?php //foreach($permiso->getMenuX(Auth::get('rol_id')) as $item): ?>
+    <?php foreach($permiso->getMenuX('1') as $item): ?>
+        <li>
+            <a href='#' title="<?php echo $item->getMenu()->titulo ?>"><?php echo $item->getMenu()->nombre ?></a>
+            <ul>
+            <?php //foreach ($permiso->getSubMenu(Auth::get('rol_id'), $item->getMenu()->id) as $permiso): ?>
+            <?php foreach ($permiso->getSubMenu(1, $item->getMenu()->id,'A','1') as $permiso): ?>            
+                <li><?php echo Html::link("{$permiso->getRecurso()->url}", $permiso->getRecurso()->nombre) ?></li>                
+            <?php endforeach; ?>
+            </ul>
+        </li>
+    <?php endforeach; ?>    
+    <li class="right">
+        <?php echo Html::link('', 'Ver sitio','target="_blank"') ?>
+    </li>
+    <li class="right">
+        <?php echo Html::link('logout/', 'Salir') ?>
+    </li>
+</ul>
