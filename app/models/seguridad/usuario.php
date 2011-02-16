@@ -64,11 +64,9 @@ class Usuario extends ActiveRecord {
             }
             $usuario = $this->find_first($usuario_id);
             if ($usuario) {
-                $usuario->clave = sha1($clave);
-                //TODO: Cambio de clave de reseteo
-                  $correo = new Correo();
-                  $reset_clave = $correo->generarClave(50);
-                  $usuario->reset = $reset_clave;
+                $usuario->clave = sha1($clave);                
+                Load::model('util/misc');                
+                $usuario->reset = Misc::generarClave(50);
                 if ($usuario->update()) {
                     return true;
                 } else {
@@ -93,7 +91,7 @@ class Usuario extends ActiveRecord {
     public function resetClaveByEmailOrUsername($email_or_username) {
         Load::model('util/misc');
         Load::model('util/correo');
-        $usuario = $this->getUsuarioByEmail($email_or_username);        
+        $usuario = $this->getUsuarioByEmail($email_or_username);
 
         if (!$usuario) {
             $usuario = $this->getUsuarioByNick($email_or_username);
@@ -101,8 +99,9 @@ class Usuario extends ActiveRecord {
         if ($usuario) {
             $reset_clave = Misc::generarClave(33);
             //Para el correo
-            $host = Config::get('config.kuportal.site_domain');
-            $url = $host . 'usuario/cambiar_clave/' . "$usuario->email/$reset_clave";
+            $host = Config::get('config.sitio.dominio');
+            $url = $host . "usuario/cambiar_clave/$usuario->email/$reset_clave/";
+            //TODO que este contenido del correo lo tome de una plantilla.
             $body = "<p>Alguien (probablemente usted) solicitó que le enviemos
                 este mensaje porque usted se ha olvidado de
                 la contraseña de su cuenta.</p>
