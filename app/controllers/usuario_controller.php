@@ -82,7 +82,7 @@ class UsuarioController extends AppController {
             }
         } else {
             Flash::error('La clave para reseteo es incorrecta o ya fue usado.');
-            return Router::redirect('usuario/mail_reset/');
+            return Router::redirect('usuario/recordar_clave/');
         }
     }
 
