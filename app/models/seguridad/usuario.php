@@ -100,6 +100,7 @@ class Usuario extends ActiveRecord {
             $reset_clave = Misc::generarClave(33);
             //Para el correo
             $host = Config::get('config.sitio.dominio');
+            $email = Config::get('config.sitio.email');
             $url = $host . "usuario/cambiar_clave/$usuario->email/$reset_clave/";
             //TODO que este contenido del correo lo tome de una plantilla.
             $body = "<p>Alguien (probablemente usted) solicitó que le enviemos
@@ -112,7 +113,7 @@ class Usuario extends ActiveRecord {
                 <p>$url.</p>
                 <p>Si usted no inició esta solicitud, por favor ignorarlo.
                 Si necesita más ayuda, por favor visítenos en $host
-                o envíenos un email a soporte@gruposantamariasa.com.</p>
+                o envíenos un email a $email.</p>
                 <p>Este mensaje se genera automáticamente.</p>
                 <p>Has recibido este correo electrónico porque un restablecimiento de contraseña se solicitó para su cuenta.</p>";
 
