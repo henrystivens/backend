@@ -25,7 +25,7 @@ class AppController extends Controller {
             if (!SdAuth::isLogged()) {                
                 $this->error_msj = SdAuth::getError();
                 View::template('login');
-                //return FALSE;
+                return FALSE;
             }        
             
             $ku_acl = new KuAcl();
@@ -40,6 +40,7 @@ class AppController extends Controller {
             if (!$ku_acl->check($recurso, 1)) {
                 Flash::warning("No tienes permiso para acceder al siguiente recurso: <b>$recurso</b>");
                 View::select(null, '401');
+                return FALSE;
             }            
         }
     }
