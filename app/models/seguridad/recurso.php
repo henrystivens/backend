@@ -26,7 +26,7 @@ class Recurso extends ActiveRecord {
 
     public function initialize() {
         //Relaciones
-        $this->has_many('permiso');
+        $this->has_many('permiso');        
         $this->belongs_to('menu');
     }   
 }

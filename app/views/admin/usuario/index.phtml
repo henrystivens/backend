@@ -9,7 +9,7 @@
                     <th>Nick</th>
                     <th>Nombre</th>
                     <th>Email</th>
-                    <th>Estado</th>
+                    <th>Activo</th>
                     <th>Acciones</th>
                 </tr></thead>
             <tbody>
@@ -19,7 +19,7 @@
                     <td><?php echo $item->nick ?></td>
                     <td><?php echo $item->nombre ?></td>
                     <td><?php echo $item->email ?></td>
-                    <td><?php echo $item->estado ?></td>
+                    <td><?php echo $item->activo ?></td>
                     <td><?php echo Html::linkAction("ver/$item->id/", 'Ver') ?> |
                     <?php echo Html::linkAction("editar/$item->id/", 'Editar') ?> |
                     <?php echo Html::linkAction("borrar/$item->id/", 'Borrar') ?> |

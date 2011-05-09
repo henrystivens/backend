@@ -1,0 +1,20 @@
+<?php Tag::css('scaffold') ?>
+<div class="registro" id="registro">    
+    <h1>Regístrate</h1>
+    <?php View::content(); ?>
+    <?php echo Form::open(null, 'post', 'class="scaffold"') ?>
+    <label for="usuario_nombre" class="required">Nombre completo<em>*</em></label>
+    <?php echo Form::text('usuario.nombre','placeholder="Escriba aqui su nombre completo" required="required" autofocus="autofocus"') ?>
+    <label for="usuario_nick" class="required">Nombre de usuario <em>*</em></label>
+    <?php echo Form::text('usuario.nick','placeholder="Escriba aqui su nombre de usuario" required="required"') ?>
+    <label for="usuario_email" class="required">Email <em>*</em></label>
+    <?php echo FormHtml5::email('usuario.email','placeholder="Escriba aqui su email" required="required"') ?>
+    <label for="usuario_clave" class="required">Celular <em>*</em></label>
+    <?php echo FormHtml5::tel('usuario.celular','placeholder="Escriba aqui su número de celular" required="required"') ?>
+    <label for="usuario_clave" class="required">Clave <em>*</em></label>
+    <?php echo Form::pass('usuario.clave','placeholder="Escriba aqui la contraseña" required="required"') ?>
+    <?php echo Form::check('usuario.acepta_terminos', 'si'); ?>
+    <?php echo Html::link('terminos/', "Acepto los terminos y condiciones",'target="_blank"'); ?>
+    <input type="submit" value="Enviar" />
+    <?php echo Form::close() ?>    
+</div>

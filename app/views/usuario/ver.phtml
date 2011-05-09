@@ -1,0 +1,17 @@
+<?php View::content(); ?>
+<?php
+if(Auth::is_valid()){
+  if(Auth::get('id') == $usuario->id){
+      echo Html::link("usuario/editar/$usuario->nick/", 'Editar');
+      echo ' | ';
+      echo Html::link("usuario/cambiar_clave2/$usuario->nick/", 'Cambiar clave');
+  }
+}
+?>
+<p style="text-align: left">
+<?php echo Html::gravatar($usuario->email,$usuario->nombre,60) ?><br />
+Nombre de usuario: <?php echo $usuario->nick?><br />
+Nombre completo: <?php echo $usuario->nombre?><br />
+Web: <a href="<?php echo $usuario->web?>"><?php echo $usuario->web?></a><br />
+Bio: <?php echo $usuario->bio?><br />
+</p>

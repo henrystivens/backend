@@ -1,0 +1,17 @@
+<div class="comunidad" id="comunidad">
+    <h1>Iniciar sesión</h1>
+    <?php View::content()?>
+    <?php echo Form::open('usuario/login/', 'post') ?>
+        <input type="hidden" name='mode' value='auth_login' />
+        <label for="txt_login" class="required">Email</label>
+        <?php echo FormHtml5::email('txt_login','placeholder="Escriba aqui su email" required="required" autofocus="autofocus"') ?><br />
+        <label for="txt_password" class="required">Clave</label>
+        <?php echo Form::pass('txt_password','placeholder="Escriba aqui su clave" required="required"') ?><br />
+        <button type="submit" class="entrar" >Entrar</button>
+    <?php echo Form::close() ?>
+    <p>
+        <a href="/usuario/registro/" title="Registrate en simacel.com">Registrate</a> |
+        <a href="/usuario/recordar_clave/" title="¿Has olvidado tu contraseña?">¿Has olvidado tu contraseña?</a> |
+        <a href="/usuario/reportar_activacion/" title="¿Problemas para activar la cuenta?">¿Problemas para activar la cuenta?</a>
+    </p>   
+</div>

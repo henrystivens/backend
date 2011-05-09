@@ -70,7 +70,43 @@ class Correo {
         $mail->SmtpClose();
         return $exito;
     }
+    
+    public static function sendContact($de_correo, $de_nombre, $asunto, $cuerpo) {
+        //Carga las librería PHPMailer
+        Load::lib('phpmailer');
+        //instancia de PHPMailer
+        $mail = new PHPMailer(true);
 
+        $mail->IsSMTP();
+        $mail->SMTPAuth = true; // enable SMTP authentication
+        $mail->SMTPSecure = 'ssl'; // sets the prefix to the servier
+        $mail->Host = Config::get('config.correo.host');
+        $mail->Port = Config::get('config.correo.port');
+        $mail->Username = Config::get('config.correo.username');
+        $mail->Password = Config::get('config.correo.password');
+        
+        $mail->AddReplyTo($de_correo, $de_nombre);
+        $mail->From = $de_correo;
+        $mail->FromName = $de_nombre;        
+
+        $mail->Subject = $asunto;
+        $mail->Body = $cuerpo;
+        $mail->WordWrap = 50; // set word wrap
+        $mail->MsgHTML($cuerpo);
+        $mail->AddAddress(Config::get('config.sitio.email'), Config::get('config.sitio.nombre'));
+        $mail->IsHTML(true); // send as HTML
+        $mail->SetLanguage('es');
+        //Enviamos el correo
+        $exito = $mail->Send();
+        $intentos = 2;
+        //esto se realizara siempre y cuando la variable $exito contenga como valor false
+        while ((!$exito) && $intentos < 1) {
+            sleep(5);
+            $exito = $mail->Send();
+            $intentos = $intentos + 1;
+        }
+
+        $mail->SmtpClose();
+        return $exito;
+    }
 }
-
-?>

@@ -1,0 +1,24 @@
+<p>
+    <?php View::content() ?>
+</p>
+<br />
+<?php echo Form::open()?>
+<p>
+    ¿No has podido activar tu cuenta? Escribe tu dirección de correo electrónico
+    o nombre de usuario. Te enviaremos de nuevo el correo para que actives tu cuenta.
+    Si sigues con el problema por favor escribenos a: <a href="mailto:info@premioscmv.com">info@premioscmv.com</a>.
+</p>
+<table>            
+    <tr class="prop">
+        <td valign="top" class="name">
+            <label for="email">Correo electrónico o Nombre de usuario:</label>
+        </td>
+        <td valign="top" class="value">
+            <?php echo Form::text('email_or_username') ?>
+        </td>
+    </tr>    
+</table>
+<?php
+echo Form::submit('Enviar','onclick="return confirm(\'¿Está seguro?\');"');
+echo Form::close();
+?>
