@@ -19,6 +19,12 @@ class AppController extends Controller {
     final protected function initialize() {       
         
         if ($this->module_name == 'admin') {
+            if(Auth::get('rol_id') == 5){
+                Flash::warning("No tienes permiso para acceder al siguiente recurso: <b>$recurso</b>");
+                View::select(null, '401');
+                return FALSE;
+            }
+            
             View::template('admin');
             
             Load::lib('SdAuth');
@@ -33,16 +39,11 @@ class AppController extends Controller {
             } else {
                 $recurso = "$this->controller_name/$this->action_name/";
             }
-
-            if(Auth::get('rol_id') == 5){
-                Flash::warning("No tienes permiso para acceder al siguiente recurso: <b>$recurso</b>");
-                View::select(null, '401');
-                return FALSE;
-            }
+            
             $ku_acl = new KuAcl();
             $ku_acl->cargarPermisos();            
 
-            if (!$ku_acl->check($recurso, Auth::get('rol_id'))) {
+            if (!$ku_acl->check($recurso, Auth::get('id'))) {
                 Flash::warning("No tienes permiso para acceder al siguiente recurso: <b>$recurso</b>");
                 View::select(null, '401');
                 return FALSE;
