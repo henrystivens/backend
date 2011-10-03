@@ -34,9 +34,9 @@ class KuAcl {
     protected $adapter;
 
     /**
-     * Carga los roles, rescursos, usuarios y permisos de la base de datos.
+     * Carga los roles, rescursos, el usuario y permisos de la base de datos.
      */
-    public function cargarPermisos() {
+    public function cargarPermisos($usuario_id) {
 
         $this->adapter = Acl2::factory();
         $rol = new Rol();
@@ -54,13 +54,12 @@ class KuAcl {
             $this->adapter->allow($value->nombre, $resources);
         }
 
-        //Consulta los usuarios
+        //Consulta el usuario
         $usuario = new Usuario();
-        $usuarios = $usuario->find();
+        $usuario1 = $usuario->find($usuario_id);
 
-        foreach ($usuarios as $value) {
-            $this->adapter->user($value->id, array($value->getRol()->nombre));
-        }
+        $this->adapter->user($usuario1->id, array($usuario1->getRol()->nombre));
+        
     }
 
     /**
