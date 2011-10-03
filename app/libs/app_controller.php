@@ -41,7 +41,7 @@ class AppController extends Controller {
             }
             
             $ku_acl = new KuAcl();
-            $ku_acl->cargarPermisos();//TODO Que solo carge los permisos del usuario que ha iniciado sesión.            
+            $ku_acl->cargarPermisos(Auth::get('id'));
 
             if (!$ku_acl->check($recurso, Auth::get('id'))) {
                 Flash::warning("No tienes permiso para acceder al siguiente recurso: <b>$recurso</b>");
