@@ -16,6 +16,7 @@
     <?php echo Form::textarea('usuario.bio') ?>
     <label for="usuario_rol_id" class="required">Rol <em>*</em></label>
     <?php echo Form::dbSelect('usuario.rol_id', 'nombre', array('seguridad/rol', 'find'), '- Seleccione -') ?>
+    <?php echo Form::hidden('usuario.acepta_terminos', NULL, 'si') ?>
     <input type="submit" value="Enviar" />
     <?php echo Form::close() ?>
     <div class="actions">
