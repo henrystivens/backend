@@ -18,26 +18,29 @@ class AppController extends Controller {
 
     final protected function initialize() {       
         
+        $recurso = '';
+        
         if ($this->module_name == 'admin') {
+            
+            View::template('admin');
+            
+            if ($this->module_name) {
+                $recurso = "$this->module_name/$this->controller_name/$this->action_name/";
+            } else {
+                $recurso = "$this->controller_name/$this->action_name/";
+            }
+            
             if(Auth::get('rol_id') == 5){
-                Flash::warning("No tienes permiso para acceder al siguiente recurso: <b>$recurso</b>");
+                Flash::warning("No tienes permiso para acceder.");
                 View::select(null, '401');
                 return FALSE;
             }
-            
-            View::template('admin');
             
             Load::lib('SdAuth');
             if (!SdAuth::isLogged()) {                
                 $this->error_msj = SdAuth::getError();
                 View::template('login');
                 return FALSE;
-            }
-
-            if ($this->module_name) {
-                $recurso = "$this->module_name/$this->controller_name/$this->action_name/";
-            } else {
-                $recurso = "$this->controller_name/$this->action_name/";
             }
             
             $ku_acl = new KuAcl();
